@@ -9,7 +9,7 @@ description = "Estándar y CLI para proyectos PBIP construidos con Matrícula y 
 requires-python = ">=3.12"
 dependencies = [
   "duckdb==1.4.2",
-  "pandas==2.3.2",
+  "pandas==3.0.5",
   "PyYAML==6.0.2",
   "jsonschema==4.25.1",
   "reportlab==4.4.3"
