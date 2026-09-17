@@ -1,0 +1,279 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "157ba16d410771c998f3",
+  "displayName": "ret_carrera",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7628e3d8520485419c3b",
+        "displayName": "Horizonte de seguimiento",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Horizontes"
+              }
+            },
+            "Property": "AnioDesdeIngreso"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Horizontes",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "AnioDesdeIngreso"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "isHiddenInViewMode": true,
+        "isLockedInViewMode": true
+      },
+      {
+        "name": "25863ec7883db6b16e97",
+        "displayName": "Tipo de IES · origen",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimTipoInstitucion"
+              }
+            },
+            "Property": "TipoInstitucion"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "acdc40a7d8bd015ba261",
+        "displayName": "Institución · origen",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimInstitucion"
+              }
+            },
+            "Property": "Institucion"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "5e25ddb0f0e5af0052bf",
+        "displayName": "Carrera · origen",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimCarrera"
+              }
+            },
+            "Property": "Carrera"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "e895546bb9fe7901674b",
+        "displayName": "Área genérica · origen",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimAreaGenerica"
+              }
+            },
+            "Property": "AreaCarreraGenerica"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "f4bc56d38d66e5257e91",
+        "displayName": "Modalidad · origen",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimModalidad"
+              }
+            },
+            "Property": "Modalidad"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "82e33c5cd383691d0745",
+        "displayName": "Jornada · origen",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimJornada"
+              }
+            },
+            "Property": "Jornada"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "2ed07b746f863e485bec",
+        "displayName": "Tipo de IES · destino",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Transiciones"
+              }
+            },
+            "Property": "TipoInstitucionDestino"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "055027f762a04834fa9d",
+        "displayName": "Institución · destino",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Transiciones"
+              }
+            },
+            "Property": "InstitucionDestino"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "3c2a12f4438caff13263",
+        "displayName": "Carrera · destino",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Transiciones"
+              }
+            },
+            "Property": "CarreraDestino"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "89322d84712ff7d1b3dd",
+        "displayName": "Área genérica · destino",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Transiciones"
+              }
+            },
+            "Property": "AreaCarreraGenericaDestino"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "3300e5c4af53d61ea89b",
+        "displayName": "Modalidad · destino",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Transiciones"
+              }
+            },
+            "Property": "ModalidadDestino"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "a30d688cc6a844c4a79f",
+        "displayName": "Jornada · destino",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Transiciones"
+              }
+            },
+            "Property": "JornadaDestino"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {}
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ed0c296887b6cba29302",
+  "position": {
+    "x": 953,
+    "y": 226,
+    "width": 291,
+    "height": 100,
+    "z": 10,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'resi-card-3'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sin matrícula con título'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA Sin Matricula Con Titulo"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA Sin Matricula Con Titulo",
+              "nativeQueryRef": "IPLA Sin Matricula Con Titulo",
+              "displayName": "Sin matrícula con título",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

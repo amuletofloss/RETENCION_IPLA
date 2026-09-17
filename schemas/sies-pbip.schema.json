@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/amuletofloss/Retencion_Academica_SIES/main/schemas/sies-pbip.schema.json",
+  "title": "Contrato de proyecto SIES PBIP",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project", "sies", "analysis", "artifacts", "publication"],
+  "properties": {
+    "schema_version": {"const": "sies-pbip/v1"},
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "display_name", "version", "release_status"],
+      "properties": {
+        "slug": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "display_name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "release_status": {"enum": ["development", "candidate", "released"]}
+      }
+    },
+    "sies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["portal", "sources", "identity"],
+      "properties": {
+        "portal": {"type": "string", "format": "uri"},
+        "sources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["matricula", "titulados"],
+          "properties": {
+            "matricula": {"$ref": "#/$defs/yearRange"},
+            "titulados": {"$ref": "#/$defs/yearRange"}
+          }
+        },
+        "identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["field", "type", "rut_forbidden"],
+          "properties": {
+            "field": {"const": "MRUN"},
+            "type": {"const": "string"},
+            "rut_forbidden": {"const": true}
+          }
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "required": ["universe_id", "cohort_field", "observation_horizon"],
+      "properties": {
+        "universe_id": {"type": "string", "minLength": 1},
+        "cohort_field": {"type": "string", "minLength": 1},
+        "observation_horizon": {"type": "integer", "minimum": 1}
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pbip", "report", "semantic_model", "data_parameter", "data_placeholder"],
+      "properties": {
+        "pbip": {"type": "string", "pattern": "\\.pbip$"},
+        "report": {"type": "string", "pattern": "\\.Report$"},
+        "semantic_model": {"type": "string", "pattern": "\\.SemanticModel$"},
+        "data_parameter": {"const": "Ruta datos"},
+        "data_placeholder": {"const": "__PBIP_DATA_PATH__"}
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "public_controls", "minimum_cell_size", "require_source_hashes", "require_data_license"],
+      "properties": {
+        "mode": {"const": "external_mrun"},
+        "public_controls": {"type": "string", "minLength": 1},
+        "minimum_cell_size": {"const": 10},
+        "require_source_hashes": {"const": true},
+        "require_data_license": {"const": true}
+      }
+    }
+  },
+  "$defs": {
+    "yearRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first_year", "last_year"],
+      "properties": {
+        "first_year": {"type": "integer", "minimum": 2000},
+        "last_year": {"type": "integer", "minimum": 2000}
+      }
+    }
+  }
+}

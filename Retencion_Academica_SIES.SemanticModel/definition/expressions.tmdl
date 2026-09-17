@@ -1,0 +1,5 @@
+expression 'Ruta datos' = "__PBIP_DATA_PATH__" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9b5e59e2-e906-45b9-8718-e624a9f556b5
+
+	annotation PBI_ResultType = Text
+

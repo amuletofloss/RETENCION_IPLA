@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "fc438b2055df301dfc89",
+  "position": {
+    "x": 1171,
+    "y": 134,
+    "width": 397,
+    "height": 76,
+    "z": 6,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "slicer",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'slicer-rc-area'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimAreaGenerica"
+                    }
+                  },
+                  "Property": "AreaCarreraGenerica"
+                }
+              },
+              "queryRef": "DimAreaGenerica.AreaCarreraGenerica",
+              "nativeQueryRef": "AreaCarreraGenerica",
+              "displayName": "Área genérica origen",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Área genérica origen'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

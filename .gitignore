@@ -1,0 +1,59 @@
+# Estado local de Power BI Desktop
+.pbi/
+**/.pbi/
+**/*.abf
+**/*.lock
+!uv.lock
+
+# Fuentes brutas y resultados reconstruibles
+datos_fuente/
+artifacts/
+validacion_local/
+powerbi_*.png
+/powerbi*.png
+/power_bi*.png
+.sies-local/
+.sies-work/
+dist/
+.pbip.local.yml
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.uv-cache/
+.coverage
+htmlcov/
+
+# Node y herramientas
+node_modules/
+coverage/
+
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+*.local.json
+*.log
+*.tmp
+*.bak
+
+# Los microdatos SIES reales nunca se publican
+datos/seguimiento_*.csv.gz
+datos/transiciones_*.csv.gz
+datos/programas.csv
+datos/resultados_control.csv
+datos/iplacex_procedencia_cohortes.csv
+
+# Material de trabajo excluido de la distribucion publica
+/estudiando al enemigo/
+/AUDITORIA*.md
+/TABLA*.pdf
+
+# Editores y sistema operativo
+.idea/
+.vscode/settings.json
+.DS_Store
+Thumbs.db

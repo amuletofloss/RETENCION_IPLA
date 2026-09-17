@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "be7750eaac47c41258cf",
+  "position": {
+    "x": 32,
+    "y": 830,
+    "width": 1536,
+    "height": 42,
+    "z": 14,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rce-note'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Llegadas y salidas son personas únicas por transición anual. Las categorías Múltiples preservan simultaneidades sin duplicar totales.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "13px",
+                      "color": "#374151",
+                      "fontWeight": "400"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

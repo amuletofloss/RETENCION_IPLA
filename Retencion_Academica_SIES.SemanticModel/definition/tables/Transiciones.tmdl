@@ -1,0 +1,332 @@
+table Transiciones
+	lineageTag: db91d520-f1df-4aac-94d7-08b93fbf8ef1
+
+	measure 'Personas flujo' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,DISTINCTCOUNT('Transiciones'[MRUN]))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: 3fec3a64-4169-4342-99e5-bb0a5551bb99
+
+	measure 'Personas cambio carrera misma IES' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[TieneOrigen]=1,'Transiciones'[TieneDestino]=1,'Transiciones'[MismaInstitucionLegal]=1,'Transiciones'[MismaCarreraExacta]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: b540847c-0eb1-488c-b09a-deaa5ae9ee88
+
+	measure 'Personas cambio institucion' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[TieneOrigen]=1,'Transiciones'[TieneDestino]=1,'Transiciones'[MismaInstitucionLegal]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: a2e6f0db-5e2e-49a0-bfa6-793f6a21aa9d
+
+	measure 'Personas sin matricula' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[TieneOrigen]=1,'Transiciones'[TieneDestino]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: d12817ca-5c5b-4fa8-9cdc-61fe867ab59e
+
+	measure 'Personas sin matricula con titulo' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[TieneOrigen]=1,'Transiciones'[TieneDestino]=0,'Transiciones'[TituladoPersonaAcumulado]=1))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: c9a2a720-9aa7-45e9-bde5-b58d159a420a
+
+	measure 'Personas sin matricula sin titulo' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[TieneOrigen]=1,'Transiciones'[TieneDestino]=0,'Transiciones'[TituladoPersonaAcumulado]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: a32597cd-ca70-482d-8c68-bd98e8a7f4ed
+
+	measure 'Llegadas IPLACEX' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[DestinoIPLACEX]=1,'Transiciones'[OrigenIPLACEX]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: e65bf7ca-7b0c-42b8-b81d-d00277cd8c82
+
+	measure 'Salidas IPLACEX' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[OrigenIPLACEX]=1,'Transiciones'[DestinoIPLACEX]=0,'Transiciones'[TieneDestino]=1))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: e131a38d-a6e7-4183-a298-7b0d8f3e3da2
+
+	measure 'Sin matricula IPLACEX' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[OrigenIPLACEX]=1,'Transiciones'[TieneDestino]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: f20917a3-3bfa-4306-aee8-44750377ed2f
+
+	measure 'Llegadas ECS' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[DestinoECS]=1,'Transiciones'[OrigenECS]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: 8559f390-aae2-4078-9819-c2d9f89fbbbf
+
+	measure 'Salidas ECS' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[OrigenECS]=1,'Transiciones'[DestinoECS]=0,'Transiciones'[TieneDestino]=1))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: 4d2708a2-f70b-4c8d-8627-61a695aca4c2
+
+	measure 'Sin matricula ECS' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[OrigenECS]=1,'Transiciones'[TieneDestino]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: 485df970-0887-4ffa-b5c2-5149f97e3b58
+
+	measure 'Movilidad juridica interna ECS' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Transiciones'[MRUN]),'Transiciones'[OrigenECS]=1,'Transiciones'[DestinoECS]=1,'Transiciones'[MismaInstitucionLegal]=0))
+		formatString: #,##0
+		displayFolder: Flujos anuales por personas
+		lineageTag: ec2b74c8-9f8e-4772-aebf-01335dbe2a48
+
+	column MRUN
+		dataType: string
+		isHidden
+		lineageTag: 4e244efd-139c-417e-9fbf-a7d9290837c3
+		summarizeBy: none
+		sourceColumn: MRUN
+
+	column AnioOrigen
+		dataType: int64
+		lineageTag: a4bb0dc6-a413-4066-ba52-3b073eda858d
+		summarizeBy: none
+		sourceColumn: AnioOrigen
+
+	column AnioDestino
+		dataType: int64
+		lineageTag: e3946784-66ac-4a02-8dd6-5578baaeb6d2
+		summarizeBy: none
+		sourceColumn: AnioDestino
+
+	column TieneOrigen
+		dataType: int64
+		lineageTag: 6575e336-576d-42ea-94dd-3e2cf3fa24b1
+		summarizeBy: none
+		sourceColumn: TieneOrigen
+
+	column TieneDestino
+		dataType: int64
+		lineageTag: 084da5bb-7ade-4cec-ad03-1343bfa20b9b
+		summarizeBy: none
+		sourceColumn: TieneDestino
+
+	column MismaCarreraExacta
+		dataType: int64
+		lineageTag: 59279011-e3b9-40fb-8b5c-3e3ef3526052
+		summarizeBy: none
+		sourceColumn: MismaCarreraExacta
+
+	column MismaInstitucionLegal
+		dataType: int64
+		lineageTag: 87cebec0-5a78-49d9-b4cf-dd5c912276f1
+		summarizeBy: none
+		sourceColumn: MismaInstitucionLegal
+
+	column OrigenIPLACEX
+		dataType: int64
+		lineageTag: 4e3b7687-809a-43b6-98d1-ef3ee5ab038d
+		summarizeBy: none
+		sourceColumn: OrigenIPLACEX
+
+	column DestinoIPLACEX
+		dataType: int64
+		lineageTag: fbfdbbb0-7ebc-4094-b8ba-0ee5b97b3b09
+		summarizeBy: none
+		sourceColumn: DestinoIPLACEX
+
+	column OrigenECS
+		dataType: int64
+		lineageTag: 3ba5226b-7186-42cc-b297-1f836c825cbe
+		summarizeBy: none
+		sourceColumn: OrigenECS
+
+	column DestinoECS
+		dataType: int64
+		lineageTag: 152c3db0-0e9c-406b-a4c2-a0b3d04e5b72
+		summarizeBy: none
+		sourceColumn: DestinoECS
+
+	column InstitucionOrigenID
+		dataType: string
+		isHidden
+		lineageTag: 701967e0-fadc-4a42-85a3-bfc9e75b4ef6
+		summarizeBy: none
+		sourceColumn: InstitucionOrigenID
+
+	column InstitucionOrigen
+		dataType: string
+		lineageTag: 91eb536c-e1fb-430e-b3a6-0aae2d5c448f
+		summarizeBy: none
+		sourceColumn: InstitucionOrigen
+
+	column TipoInstitucionOrigen
+		dataType: string
+		lineageTag: 8a67e1e7-0b7c-4daa-964a-fca0c367b81c
+		summarizeBy: none
+		sourceColumn: TipoInstitucionOrigen
+
+	column CarreraExactaOrigenID
+		dataType: string
+		isHidden
+		lineageTag: a9deeb2e-c05b-4909-93f5-d68ae6e488d7
+		summarizeBy: none
+		sourceColumn: CarreraExactaOrigenID
+
+	column CodigoCarreraOrigen
+		dataType: string
+		lineageTag: 2f8b7058-e96e-4926-9f9b-495a047c62ba
+		summarizeBy: none
+		sourceColumn: CodigoCarreraOrigen
+
+	column CarreraOrigen
+		dataType: string
+		lineageTag: cb432194-e513-4ed2-9c35-430da862c700
+		summarizeBy: none
+		sourceColumn: CarreraOrigen
+
+	column NivelOrigen
+		dataType: string
+		lineageTag: c9b55290-8ca8-4a9a-833d-e849c198e66d
+		summarizeBy: none
+		sourceColumn: NivelOrigen
+
+	column AreaCarreraGenericaOrigen
+		dataType: string
+		lineageTag: 8b759a60-bd3a-4dd1-a5db-32f5bec7ddc4
+		summarizeBy: none
+		sourceColumn: AreaCarreraGenericaOrigen
+
+	column AreaConocimientoOrigen
+		dataType: string
+		lineageTag: b7b0991a-b26f-47bb-af72-0f32b03932f4
+		summarizeBy: none
+		sourceColumn: AreaConocimientoOrigen
+
+	column ModalidadOrigen
+		dataType: string
+		lineageTag: 9a47456f-0e32-4b76-bf1c-427acbe491b8
+		summarizeBy: none
+		sourceColumn: ModalidadOrigen
+
+	column JornadaOrigen
+		dataType: string
+		lineageTag: 9565583c-0dce-4e7b-9de1-81f2fdba3417
+		summarizeBy: none
+		sourceColumn: JornadaOrigen
+
+	column InstitucionDestinoID
+		dataType: string
+		isHidden
+		lineageTag: e586db64-eb00-41a1-b0ee-2e84cd568313
+		summarizeBy: none
+		sourceColumn: InstitucionDestinoID
+
+	column InstitucionDestino
+		dataType: string
+		lineageTag: 6f75d584-aeac-472b-b43a-2912acb108bc
+		summarizeBy: none
+		sourceColumn: InstitucionDestino
+
+	column TipoInstitucionDestino
+		dataType: string
+		lineageTag: 4288ca12-1cae-493a-8d60-2e6bb50e4e49
+		summarizeBy: none
+		sourceColumn: TipoInstitucionDestino
+
+	column CarreraExactaDestinoID
+		dataType: string
+		isHidden
+		lineageTag: 5efd292e-9736-4f5a-be43-4398d5dcaedf
+		summarizeBy: none
+		sourceColumn: CarreraExactaDestinoID
+
+	column CodigoCarreraDestino
+		dataType: string
+		lineageTag: 59afac7c-ba41-4fdf-957a-89b09aa498b2
+		summarizeBy: none
+		sourceColumn: CodigoCarreraDestino
+
+	column CarreraDestino
+		dataType: string
+		lineageTag: fcd44415-7bc5-40d6-b634-531a2cd982a6
+		summarizeBy: none
+		sourceColumn: CarreraDestino
+
+	column NivelDestino
+		dataType: string
+		lineageTag: 755dc772-6486-4ec7-bef2-581796ed67c1
+		summarizeBy: none
+		sourceColumn: NivelDestino
+
+	column AreaCarreraGenericaDestino
+		dataType: string
+		lineageTag: abfb0b71-ded9-4062-b90a-420cbc3efdec
+		summarizeBy: none
+		sourceColumn: AreaCarreraGenericaDestino
+
+	column AreaConocimientoDestino
+		dataType: string
+		lineageTag: 6ac9cecd-938b-47c5-af48-56ce788868c6
+		summarizeBy: none
+		sourceColumn: AreaConocimientoDestino
+
+	column ModalidadDestino
+		dataType: string
+		lineageTag: 80359a61-2d54-40f2-888c-c118510723cf
+		summarizeBy: none
+		sourceColumn: ModalidadDestino
+
+	column JornadaDestino
+		dataType: string
+		lineageTag: 0b231bfa-a432-4f55-b382-ad319f6c5778
+		summarizeBy: none
+		sourceColumn: JornadaDestino
+
+	column EstadoCarrera
+		dataType: string
+		lineageTag: 503f86a0-52a7-4bad-893a-4c8e6bf67d6b
+		summarizeBy: none
+		sourceColumn: EstadoCarrera
+
+	column EstadoInstitucion
+		dataType: string
+		lineageTag: 565a7db2-8a16-43e3-a482-7fa45a360fe4
+		summarizeBy: none
+		sourceColumn: EstadoInstitucion
+
+	column EstadoEducacionSuperior
+		dataType: string
+		lineageTag: 38293609-92b0-42a4-935b-ef29ade6f32c
+		summarizeBy: none
+		sourceColumn: EstadoEducacionSuperior
+
+	column TituladoPersonaAcumulado
+		dataType: int64
+		lineageTag: 6f968837-7060-43a8-99b5-9a45a8214319
+		summarizeBy: none
+		sourceColumn: TituladoPersonaAcumulado
+
+	partition Transiciones = m
+		mode: import
+		source =
+				let
+					Files = Folder.Files(#"Ruta datos"),
+					Selected = Table.SelectRows(Files, each Text.StartsWith([Name], "transiciones_") and Text.EndsWith([Name], ".csv.gz")),
+					Parsed = Table.AddColumn(Selected, "Rows", each Table.PromoteHeaders(Csv.Document(Binary.Decompress([Content], Compression.GZip), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true])),
+					Combined = Table.Combine(Parsed[Rows]),
+					Types = Table.TransformColumnTypes(Combined,{{"MRUN",type text},{"AnioOrigen",Int64.Type},{"AnioDestino",Int64.Type},{"TieneOrigen",Int64.Type},{"TieneDestino",Int64.Type},{"MismaCarreraExacta",Int64.Type},{"MismaInstitucionLegal",Int64.Type},{"OrigenIPLACEX",Int64.Type},{"DestinoIPLACEX",Int64.Type},{"OrigenECS",Int64.Type},{"DestinoECS",Int64.Type},{"InstitucionOrigenID",type text},{"InstitucionOrigen",type text},{"TipoInstitucionOrigen",type text},{"CarreraExactaOrigenID",type text},{"CodigoCarreraOrigen",type text},{"CarreraOrigen",type text},{"NivelOrigen",type text},{"AreaCarreraGenericaOrigen",type text},{"AreaConocimientoOrigen",type text},{"ModalidadOrigen",type text},{"JornadaOrigen",type text},{"InstitucionDestinoID",type text},{"InstitucionDestino",type text},{"TipoInstitucionDestino",type text},{"CarreraExactaDestinoID",type text},{"CodigoCarreraDestino",type text},{"CarreraDestino",type text},{"NivelDestino",type text},{"AreaCarreraGenericaDestino",type text},{"AreaConocimientoDestino",type text},{"ModalidadDestino",type text},{"JornadaDestino",type text},{"EstadoCarrera",type text},{"EstadoInstitucion",type text},{"EstadoEducacionSuperior",type text},{"TituladoPersonaAcumulado",Int64.Type}},"en-US")
+				in Types
+

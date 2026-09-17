@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "8a43f1afd5915dfd5f58",
+  "position": {
+    "x": 792,
+    "y": 350,
+    "width": 776,
+    "height": 220,
+    "z": 12,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ri-dest'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Principales flujos hacia otras instituciones'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "InstitucionDestino"
+                }
+              },
+              "queryRef": "Transiciones.InstitucionDestino",
+              "nativeQueryRef": "InstitucionDestino",
+              "displayName": "Institución destino",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "Personas cambio institucion"
+                }
+              },
+              "queryRef": "Transiciones.Personas cambio institucion",
+              "nativeQueryRef": "Personas cambio institucion",
+              "displayName": "Personas",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

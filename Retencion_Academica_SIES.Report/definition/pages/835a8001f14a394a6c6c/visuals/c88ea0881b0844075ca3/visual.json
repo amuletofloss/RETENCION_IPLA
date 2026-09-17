@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c88ea0881b0844075ca3",
+  "position": {
+    "x": 32,
+    "y": 350,
+    "width": 744,
+    "height": 220,
+    "z": 11,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ri-rate'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ranking institucional por base y tasa'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "Institucion"
+                }
+              },
+              "queryRef": "Programas.Institucion",
+              "nativeQueryRef": "Institucion",
+              "displayName": "Institución jurídica",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Base Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.Base Año 2",
+              "nativeQueryRef": "Base Año 2",
+              "displayName": "Base · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Tasa Institucion Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.Tasa Institucion Año 2",
+              "nativeQueryRef": "Tasa Institucion Año 2",
+              "displayName": "Tasa",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

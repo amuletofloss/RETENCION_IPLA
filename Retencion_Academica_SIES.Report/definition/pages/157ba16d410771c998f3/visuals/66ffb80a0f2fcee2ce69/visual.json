@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "66ffb80a0f2fcee2ce69",
+  "position": {
+    "x": 32,
+    "y": 350,
+    "width": 744,
+    "height": 220,
+    "z": 11,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rc-area'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Retención por área genérica'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "AreaCarreraGenerica"
+                }
+              },
+              "queryRef": "Programas.AreaCarreraGenerica",
+              "nativeQueryRef": "AreaCarreraGenerica",
+              "displayName": "Área genérica",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Tasa Carrera Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.Tasa Carrera Año 2",
+              "nativeQueryRef": "Tasa Carrera Año 2",
+              "displayName": "Tasa",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,15 @@
+schema_version: sies-pbip/desktop-evidence/v1
+project_version: 3.3.1
+status: pending
+power_bi_desktop: "REEMPLAZAR"
+sies_cutoff:
+  matricula: 2025
+  titulados: 2024
+checks:
+  opened_without_repair: false
+  refresh_completed: false
+  control_totals_match: false
+  interactions_reviewed: false
+  accessibility_reviewed: false
+reviewer: "REEMPLAZAR"
+reviewed_at: "REEMPLAZAR"

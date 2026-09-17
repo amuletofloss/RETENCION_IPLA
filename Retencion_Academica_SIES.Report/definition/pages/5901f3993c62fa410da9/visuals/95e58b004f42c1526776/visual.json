@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "95e58b004f42c1526776",
+  "position": {
+    "x": 953,
+    "y": 226,
+    "width": 291,
+    "height": 100,
+    "z": 10,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'res-card-3'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sin matrícula con título'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Sin Matricula Con Titulo Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Sin Matricula Con Titulo Año 2",
+              "nativeQueryRef": "N Sin Matricula Con Titulo Año 2",
+              "displayName": "Sin matrícula con título",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

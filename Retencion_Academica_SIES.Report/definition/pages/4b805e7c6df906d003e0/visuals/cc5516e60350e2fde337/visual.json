@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "cc5516e60350e2fde337",
+  "position": {
+    "x": 792,
+    "y": 350,
+    "width": 776,
+    "height": 220,
+    "z": 12,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rce-out'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Carreras/áreas de destino desde ECS'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "AreaCarreraGenericaDestino"
+                }
+              },
+              "queryRef": "Transiciones.AreaCarreraGenericaDestino",
+              "nativeQueryRef": "AreaCarreraGenericaDestino",
+              "displayName": "Área genérica de destino",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "Salidas ECS"
+                }
+              },
+              "queryRef": "Transiciones.Salidas ECS",
+              "nativeQueryRef": "Salidas ECS",
+              "displayName": "Salidas · personas",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

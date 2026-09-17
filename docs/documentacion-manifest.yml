@@ -1,0 +1,37 @@
+schema_version: 1
+project: Retencion_Academica_SIES
+project_version: 3.3.1
+documentation_version: 2.0.0
+status: candidato_external_mrun
+last_reviewed: 2026-09-13
+next_review_recommended: 2027-03-13
+canonical_index: docs/README.md
+owners:
+  repository: "@amuletofloss"
+  semantic_model: "@amuletofloss"
+  report: "@amuletofloss"
+  data: "@amuletofloss"
+  documentation: "@amuletofloss"
+  devops: "@amuletofloss"
+verified_environment:
+  power_bi_desktop: "2.157.1354.0 (August 2026)"
+  python: "3.12"
+  node: "22"
+known_open_risks:
+  - revision_juridica_y_privacidad_de_publicacion_historica_mrun
+  - validacion_manual_power_bi_desktop_4_0_0
+  - configuracion_de_ruleset_y_private_vulnerability_reporting
+canonical_documents:
+  - docs/00-introduccion.md
+  - docs/01-estructura-pbip.md
+  - docs/02-modelo-semantico.md
+  - docs/03-dax.md
+  - docs/04-power-query.md
+  - docs/05-reporte.md
+  - docs/06-seguridad.md
+  - docs/07-alm-devops.md
+  - docs/08-estandares.md
+  - docs/09-glosario.md
+  - docs/10-adr/README.md
+  - docs/11-checklists.md
+  - docs/12-estandar-reutilizable.md

@@ -1,0 +1,18 @@
+table DimTipoInstitucion
+	lineageTag: e9990c9b-a80c-408b-9e62-fb5c09d0b931
+
+	column TipoInstitucion
+		dataType: string
+		lineageTag: b82b0623-0817-49e1-ab2d-6243007d96a8
+		summarizeBy: none
+		sourceColumn: TipoInstitucion
+
+	partition DimTipoInstitucion = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(#"Ruta datos" & "/dim_tipo_institucion.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Types = Table.TransformColumnTypes(Headers,{{"TipoInstitucion",type text}},"en-US")
+				in Types
+

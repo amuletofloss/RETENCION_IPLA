@@ -1,0 +1,165 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 902.496907446452,
+            "y": 148.35381557406663
+          },
+          "nodeIndex": "Cohortes",
+          "nodeLineageTag": "a65d6fe2-7f3d-4c5d-8832-182127b5e91e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1363.0239324635638,
+            "y": 656.503646228153
+          },
+          "nodeIndex": "Horizontes",
+          "nodeLineageTag": "2e62c56f-4574-4f52-8dbb-7373ab7c641b",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1312.0122542799102,
+            "y": -50
+          },
+          "nodeIndex": "Programas",
+          "nodeLineageTag": "978bdc64-1601-41b5-bd98-b5d92413b805",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1166.0908601839988,
+            "y": 303.69761159687505
+          },
+          "nodeIndex": "Seguimiento",
+          "nodeLineageTag": "15a19ae2-399a-4102-9c96-d45c630f84cd",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 508.84287691405734,
+            "y": 62.586010736522496
+          },
+          "nodeIndex": "DimAreaGenerica",
+          "nodeLineageTag": "e5bab4c9-3c7c-4054-9364-09ac5027621d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.49690744645193,
+            "y": 323.72103997984146
+          },
+          "nodeIndex": "DimCarrera",
+          "nodeLineageTag": "68abc3e7-13b1-4d6b-99ff-607b81405703",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 213.92623073217948,
+            "y": 38.557193321990383
+          },
+          "nodeIndex": "DimInstitucion",
+          "nodeLineageTag": "0b06876b-d595-4219-9fb1-531188df0ff7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 438.20533132707749,
+            "y": 591.94645290616268
+          },
+          "nodeIndex": "DimJornada",
+          "nodeLineageTag": "772eb2e2-0864-441d-86ee-0040b1d0b541",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 153.95826387648378,
+            "y": 566.981885288835
+          },
+          "nodeIndex": "DimModalidad",
+          "nodeLineageTag": "11d43d1d-7c48-4bdc-a616-7bd016774f1c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 297.86527136624574
+          },
+          "nodeIndex": "DimTipoInstitucion",
+          "nodeLineageTag": "e9990c9b-a80c-408b-9e62-fb5c09d0b931",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.26218104135489,
+            "y": 216.78976771134984
+          },
+          "nodeIndex": "Transiciones",
+          "nodeLineageTag": "db91d520-f1df-4aac-94d7-08b93fbf8ef1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

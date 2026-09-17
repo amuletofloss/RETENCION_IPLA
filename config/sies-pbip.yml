@@ -1,0 +1,41 @@
+schema_version: sies-pbip/v1
+
+project:
+  slug: retencion_academica_sies
+  display_name: Retención Académica SIES
+  version: 3.3.1
+  release_status: released
+
+sies:
+  portal: https://centroestudios.mineduc.cl/datos-abiertos/
+  sources:
+    matricula:
+      first_year: 2011
+      last_year: 2026
+    titulados:
+      first_year: 2011
+      last_year: 2026
+  identity:
+    field: MRUN
+    type: string
+    rut_forbidden: true
+
+analysis:
+  universe_id: ip_cft_flexible
+  cohort_field: Cohorte
+  observation_horizon: 15
+
+artifacts:
+  pbip: Retencion_Academica_SIES.pbip
+  report: Retencion_Academica_SIES.Report
+  semantic_model: Retencion_Academica_SIES.SemanticModel
+  data_parameter: Ruta datos
+  data_placeholder: __PBIP_DATA_PATH__
+
+publication:
+  mode: external_mrun
+  public_controls: datos/controles_publicos
+  minimum_cell_size: 10
+  require_source_hashes: true
+  require_data_license: true
+

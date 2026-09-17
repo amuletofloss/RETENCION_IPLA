@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "620a4f0f46e86d1aaa4c",
+  "position": {
+    "x": 32,
+    "y": 350,
+    "width": 744,
+    "height": 220,
+    "z": 12,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rese-inst'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ausencia por institución de origen ECS'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "Institucion"
+                }
+              },
+              "queryRef": "Programas.Institucion",
+              "nativeQueryRef": "Institucion",
+              "displayName": "Institución origen",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "ECS Sin Matricula Con Titulo"
+                }
+              },
+              "queryRef": "Seguimiento.ECS Sin Matricula Con Titulo",
+              "nativeQueryRef": "ECS Sin Matricula Con Titulo",
+              "displayName": "Con título · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "ECS Sin Matricula Sin Titulo"
+                }
+              },
+              "queryRef": "Seguimiento.ECS Sin Matricula Sin Titulo",
+              "nativeQueryRef": "ECS Sin Matricula Sin Titulo",
+              "displayName": "Sin título · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "392b822bac72bf9417cd",
+  "position": {
+    "x": 784,
+    "y": 226,
+    "width": 360,
+    "height": 100,
+    "z": 9,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rie-card-2'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Salidas a otra IES · personas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "Salidas ECS"
+                }
+              },
+              "queryRef": "Transiciones.Salidas ECS",
+              "nativeQueryRef": "Salidas ECS",
+              "displayName": "Salidas a otra IES · personas",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "02ede7eb40b06b6cc46b",
+  "position": {
+    "x": 792,
+    "y": 350,
+    "width": 776,
+    "height": 220,
+    "z": 13,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'res-area'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ausencia por carrera/área de origen general'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "AreaCarreraGenerica"
+                }
+              },
+              "queryRef": "Programas.AreaCarreraGenerica",
+              "nativeQueryRef": "AreaCarreraGenerica",
+              "displayName": "Área genérica de origen",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Sin Matricula Con Titulo Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Sin Matricula Con Titulo Año 2",
+              "nativeQueryRef": "N Sin Matricula Con Titulo Año 2",
+              "displayName": "Con título · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Sin Matricula Sin Titulo Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Sin Matricula Sin Titulo Año 2",
+              "nativeQueryRef": "N Sin Matricula Sin Titulo Año 2",
+              "displayName": "Sin título · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

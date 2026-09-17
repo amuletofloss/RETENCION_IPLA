@@ -1,0 +1,25 @@
+table DimCarrera
+	lineageTag: 68abc3e7-13b1-4d6b-99ff-607b81405703
+
+	column CarreraExactaID
+		dataType: string
+		isHidden
+		lineageTag: a1af8479-04f3-429b-9414-e1705ccd91af
+		summarizeBy: none
+		sourceColumn: CarreraExactaID
+
+	column Carrera
+		dataType: string
+		lineageTag: c79bb897-343d-4837-99e2-89d54edbd53c
+		summarizeBy: none
+		sourceColumn: Carrera
+
+	partition DimCarrera = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(#"Ruta datos" & "/dim_carrera.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Types = Table.TransformColumnTypes(Headers,{{"CarreraExactaID",type text},{"Carrera",type text}},"en-US")
+				in Types
+

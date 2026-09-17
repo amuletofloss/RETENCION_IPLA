@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "cc0957d6cf78600b8142",
+  "position": {
+    "x": 646,
+    "y": 226,
+    "width": 291,
+    "height": 100,
+    "z": 9,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rese-card-2'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tasa de permanencia'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "ECS Tasa ES Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.ECS Tasa ES Año 2",
+              "nativeQueryRef": "ECS Tasa ES Año 2",
+              "displayName": "Tasa de permanencia",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

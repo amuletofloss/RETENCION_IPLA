@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "1ba27ad3f83fff5a2342",
+  "position": {
+    "x": 32,
+    "y": 350,
+    "width": 744,
+    "height": 220,
+    "z": 12,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'res-inst'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ausencia por institución de origen general'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "Institucion"
+                }
+              },
+              "queryRef": "Programas.Institucion",
+              "nativeQueryRef": "Institucion",
+              "displayName": "Institución origen",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Sin Matricula Con Titulo Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Sin Matricula Con Titulo Año 2",
+              "nativeQueryRef": "N Sin Matricula Con Titulo Año 2",
+              "displayName": "Con título · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Sin Matricula Sin Titulo Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Sin Matricula Sin Titulo Año 2",
+              "nativeQueryRef": "N Sin Matricula Sin Titulo Año 2",
+              "displayName": "Sin título · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

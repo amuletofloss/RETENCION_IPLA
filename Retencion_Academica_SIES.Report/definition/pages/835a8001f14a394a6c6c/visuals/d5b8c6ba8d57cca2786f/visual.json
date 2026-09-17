@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "d5b8c6ba8d57cca2786f",
+  "position": {
+    "x": 32,
+    "y": 830,
+    "width": 1536,
+    "height": 42,
+    "z": 14,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ri-note'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Retención institucional exige el mismo código jurídico. Las transiciones abarcan universidades, IP, CFT y demás tipos presentes en SIES.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "13px",
+                      "color": "#374151",
+                      "fontWeight": "400"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

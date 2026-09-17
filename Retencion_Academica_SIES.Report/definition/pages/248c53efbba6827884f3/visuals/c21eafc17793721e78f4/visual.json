@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c21eafc17793721e78f4",
+  "position": {
+    "x": 1160,
+    "y": 226,
+    "width": 408,
+    "height": 100,
+    "z": 10,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rie-card-3'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sin matrícula · personas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "Sin matricula ECS"
+                }
+              },
+              "queryRef": "Transiciones.Sin matricula ECS",
+              "nativeQueryRef": "Sin matricula ECS",
+              "displayName": "Sin matrícula · personas",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "audit_version": "3.3.1",
+  "data_cutoff": "matrícula 2026 / titulados 2025",
+  "data_directory": "datos",
+  "controls": 5693,
+  "passed": 5693,
+  "failed": 0,
+  "valid_cohort_horizon_cells": 136,
+  "dimensions_reconciled": [
+    "TipoInstitucion",
+    "Institucion",
+    "Carrera",
+    "Nivel",
+    "Area",
+    "ModalidadOrigen",
+    "JornadaOrigen",
+    "AmbitoFlexible",
+    "GrupoECS"
+  ],
+  "flow_dimensions_reconciled": [
+    "InstitucionOrigen",
+    "InstitucionDestino",
+    "CarreraOrigen",
+    "CarreraDestino",
+    "AreaCarreraGenericaOrigen",
+    "AreaCarreraGenericaDestino",
+    "ModalidadOrigen",
+    "ModalidadDestino",
+    "JornadaOrigen",
+    "JornadaDestino",
+    "TipoInstitucionOrigen",
+    "TipoInstitucionDestino"
+  ],
+  "source_hash": "FB5AD3DE7A5CBDA2581875CDA144157C2ED7368152950C5F5BCB7F657E65EFD0",
+  "publication_mode": "external_mrun"
+}

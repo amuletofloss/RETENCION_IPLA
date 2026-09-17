@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ba74aa23f6df0531e527",
+  "position": {
+    "x": 792,
+    "y": 350,
+    "width": 776,
+    "height": 220,
+    "z": 13,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rese-area'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ausencia por carrera/área de origen ECS'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "AreaCarreraGenerica"
+                }
+              },
+              "queryRef": "Programas.AreaCarreraGenerica",
+              "nativeQueryRef": "AreaCarreraGenerica",
+              "displayName": "Área genérica de origen",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "ECS Sin Matricula Con Titulo"
+                }
+              },
+              "queryRef": "Seguimiento.ECS Sin Matricula Con Titulo",
+              "nativeQueryRef": "ECS Sin Matricula Con Titulo",
+              "displayName": "Con título · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "ECS Sin Matricula Sin Titulo"
+                }
+              },
+              "queryRef": "Seguimiento.ECS Sin Matricula Sin Titulo",
+              "nativeQueryRef": "ECS Sin Matricula Sin Titulo",
+              "displayName": "Sin título · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

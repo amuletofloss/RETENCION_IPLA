@@ -1,0 +1,16 @@
+{
+  "version": "3.3.1",
+  "files": 337,
+  "bytes": 1147882,
+  "largest_file_bytes": 182741,
+  "files_over_100_mib": 0,
+  "microdata_files": 0,
+  "pages": 16,
+  "visuals": 211,
+  "removed": [
+    "Retencion_Academica_SIES.Report/.pbi",
+    "siespbip/__pycache__",
+    "tests/__pycache__",
+    "tests/standard/__pycache__"
+  ]
+}

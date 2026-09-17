@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "0233e5e3dca97ed01db1",
+  "position": {
+    "x": 792,
+    "y": 350,
+    "width": 776,
+    "height": 220,
+    "z": 12,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rc-flow'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Movimientos de personas en todo pregrado'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "EstadoCarrera"
+                }
+              },
+              "queryRef": "Transiciones.EstadoCarrera",
+              "nativeQueryRef": "EstadoCarrera",
+              "displayName": "Estado",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "Personas flujo"
+                }
+              },
+              "queryRef": "Transiciones.Personas flujo",
+              "nativeQueryRef": "Personas flujo",
+              "displayName": "Personas",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
