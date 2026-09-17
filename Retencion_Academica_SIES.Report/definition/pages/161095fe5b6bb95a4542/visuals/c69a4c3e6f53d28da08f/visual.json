@@ -1,0 +1,262 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c69a4c3e6f53d28da08f",
+  "position": {
+    "x": 32,
+    "y": 590,
+    "width": 1536,
+    "height": 228,
+    "z": 14,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'resi-table'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detalle de permanencia IPLACEX'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "Institucion"
+                }
+              },
+              "queryRef": "Programas.Institucion",
+              "nativeQueryRef": "Institucion",
+              "displayName": "Institución",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "TipoInstitucion"
+                }
+              },
+              "queryRef": "Programas.TipoInstitucion",
+              "nativeQueryRef": "TipoInstitucion",
+              "displayName": "Tipo",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "Carrera"
+                }
+              },
+              "queryRef": "Programas.Carrera",
+              "nativeQueryRef": "Carrera",
+              "displayName": "Carrera",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "AreaCarreraGenerica"
+                }
+              },
+              "queryRef": "Programas.AreaCarreraGenerica",
+              "nativeQueryRef": "AreaCarreraGenerica",
+              "displayName": "Área genérica",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "ModalidadOrigen"
+                }
+              },
+              "queryRef": "Programas.ModalidadOrigen",
+              "nativeQueryRef": "ModalidadOrigen",
+              "displayName": "Modalidad",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "JornadaOrigen"
+                }
+              },
+              "queryRef": "Programas.JornadaOrigen",
+              "nativeQueryRef": "JornadaOrigen",
+              "displayName": "Jornada",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA Base Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA Base Año 2",
+              "nativeQueryRef": "IPLA Base Año 2",
+              "displayName": "Base · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA N ES Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA N ES Año 2",
+              "nativeQueryRef": "IPLA N ES Año 2",
+              "displayName": "Permanencia · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA Tasa ES Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA Tasa ES Año 2",
+              "nativeQueryRef": "IPLA Tasa ES Año 2",
+              "displayName": "Tasa",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA Sin Matricula Con Titulo"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA Sin Matricula Con Titulo",
+              "nativeQueryRef": "IPLA Sin Matricula Con Titulo",
+              "displayName": "Sin matrícula con título",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA Sin Matricula Sin Titulo"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA Sin Matricula Sin Titulo",
+              "nativeQueryRef": "IPLA Sin Matricula Sin Titulo",
+              "displayName": "Sin matrícula sin título",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

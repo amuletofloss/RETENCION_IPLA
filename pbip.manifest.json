@@ -1,0 +1,109 @@
+{
+  "name": "Retencion_Academica_SIES",
+  "version": "3.3.1",
+  "dataCutoff": "matrícula 2026 / titulados 2025",
+  "pages": [
+    {
+      "id": "c684c21f43d332708e87",
+      "label": "Resumen nacional"
+    },
+    {
+      "id": "f6fdeecbc23c4ca758c7",
+      "label": "Cohortes"
+    },
+    {
+      "id": "37abf87137dd5115b1cb",
+      "label": "Instituciones"
+    },
+    {
+      "id": "df89cfe9ca9aeeecc3a5",
+      "label": "Modalidad y jornada"
+    },
+    {
+      "id": "b9937e0cbe93955069e2",
+      "label": "ECS"
+    },
+    {
+      "id": "8c69a0c1554a55a90ec4",
+      "label": "Titulación"
+    },
+    {
+      "id": "deed4ca2f00bf9a58680",
+      "label": "Metodología"
+    },
+    {
+      "id": "157ba16d410771c998f3",
+      "label": "ret_carrera"
+    },
+    {
+      "id": "09fcec4c604fb03717a7",
+      "label": "ret_carrera_ipla"
+    },
+    {
+      "id": "4b805e7c6df906d003e0",
+      "label": "ret_carrera_ecs"
+    },
+    {
+      "id": "835a8001f14a394a6c6c",
+      "label": "ret_institucion"
+    },
+    {
+      "id": "e4df13989a7b7c49bae0",
+      "label": "ret_ipla"
+    },
+    {
+      "id": "248c53efbba6827884f3",
+      "label": "ret_ecs"
+    },
+    {
+      "id": "5901f3993c62fa410da9",
+      "label": "ret_educacion_superior"
+    },
+    {
+      "id": "161095fe5b6bb95a4542",
+      "label": "ret_es_ipla"
+    },
+    {
+      "id": "d46c2ee6cbce60a81f1e",
+      "label": "ret_es_ecs"
+    }
+  ],
+  "sourceYears": {
+    "matricula": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "titulados": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "status": "released"
+}

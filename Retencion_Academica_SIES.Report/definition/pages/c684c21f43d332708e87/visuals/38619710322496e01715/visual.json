@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "38619710322496e01715",
+  "position": {
+    "x": 784,
+    "y": 226,
+    "width": 360,
+    "height": 100,
+    "z": 8,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'r-card-2'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Retención institucional'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Tasa Institucion"
+                }
+              },
+              "queryRef": "Seguimiento.Tasa Institucion",
+              "nativeQueryRef": "Tasa Institucion",
+              "displayName": "Retención institucional",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

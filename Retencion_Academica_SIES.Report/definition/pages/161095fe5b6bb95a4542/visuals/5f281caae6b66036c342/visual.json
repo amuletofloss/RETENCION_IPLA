@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "5f281caae6b66036c342",
+  "position": {
+    "x": 646,
+    "y": 226,
+    "width": 291,
+    "height": 100,
+    "z": 9,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'resi-card-2'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tasa de permanencia'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA Tasa ES Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA Tasa ES Año 2",
+              "nativeQueryRef": "IPLA Tasa ES Año 2",
+              "displayName": "Tasa de permanencia",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "f2f4ef096050e8cd6027",
+  "position": {
+    "x": 32,
+    "y": 226,
+    "width": 360,
+    "height": 100,
+    "z": 7,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rc-card-0'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Trayectorias base'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Base Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.Base Año 2",
+              "nativeQueryRef": "Base Año 2",
+              "displayName": "Trayectorias base",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

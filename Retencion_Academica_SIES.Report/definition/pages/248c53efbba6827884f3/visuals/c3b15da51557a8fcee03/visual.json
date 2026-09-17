@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c3b15da51557a8fcee03",
+  "position": {
+    "x": 408,
+    "y": 226,
+    "width": 360,
+    "height": 100,
+    "z": 8,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rie-card-1'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Llegadas externas · personas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "Llegadas ECS"
+                }
+              },
+              "queryRef": "Transiciones.Llegadas ECS",
+              "nativeQueryRef": "Llegadas ECS",
+              "displayName": "Llegadas externas · personas",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

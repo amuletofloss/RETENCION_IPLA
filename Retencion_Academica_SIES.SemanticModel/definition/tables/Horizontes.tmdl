@@ -1,0 +1,24 @@
+table Horizontes
+	lineageTag: c9e09202-9bab-4118-aac6-037dd51877cf
+
+	column AnioDesdeIngreso
+		dataType: int64
+		lineageTag: e010362d-e17c-45bd-b468-a8102e14698b
+		summarizeBy: none
+		sourceColumn: AnioDesdeIngreso
+
+	column Etiqueta
+		dataType: string
+		lineageTag: ff688f19-dbfd-447f-a043-8c3160f8828c
+		summarizeBy: none
+		sourceColumn: Etiqueta
+
+	partition Horizontes = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(#"Ruta datos" & "/horizontes.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Types = Table.TransformColumnTypes(Headers,{{"AnioDesdeIngreso",Int64.Type},{"Etiqueta",type text}},"en-US")
+				in Types
+

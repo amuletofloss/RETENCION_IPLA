@@ -1,0 +1,230 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "aaa5997d9d7104acb0f0",
+  "position": {
+    "x": 32,
+    "y": 590,
+    "width": 1536,
+    "height": 228,
+    "z": 13,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rc-table'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Retención exacta y salidas educativas por programa'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "Institucion"
+                }
+              },
+              "queryRef": "Programas.Institucion",
+              "nativeQueryRef": "Institucion",
+              "displayName": "Institución",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "AreaCarreraGenerica"
+                }
+              },
+              "queryRef": "Programas.AreaCarreraGenerica",
+              "nativeQueryRef": "AreaCarreraGenerica",
+              "displayName": "Área genérica",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Programas"
+                    }
+                  },
+                  "Property": "Carrera"
+                }
+              },
+              "queryRef": "Programas.Carrera",
+              "nativeQueryRef": "Carrera",
+              "displayName": "Carrera",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Base Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.Base Año 2",
+              "nativeQueryRef": "Base Año 2",
+              "displayName": "Base · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Carrera Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Carrera Año 2",
+              "nativeQueryRef": "N Carrera Año 2",
+              "displayName": "Retenidos · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Tasa Carrera Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.Tasa Carrera Año 2",
+              "nativeQueryRef": "Tasa Carrera Año 2",
+              "displayName": "Tasa",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Cambio Carrera Misma IES Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Cambio Carrera Misma IES Año 2",
+              "nativeQueryRef": "N Cambio Carrera Misma IES Año 2",
+              "displayName": "Cambio interno · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Cambio IES Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Cambio IES Año 2",
+              "nativeQueryRef": "N Cambio IES Año 2",
+              "displayName": "Cambio IES · trayectorias",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N Sin Matricula Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N Sin Matricula Año 2",
+              "nativeQueryRef": "N Sin Matricula Año 2",
+              "displayName": "Sin matrícula · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

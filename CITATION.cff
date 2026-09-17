@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Si utiliza este proyecto, cite esta versión y las fuentes SIES indicadas."
+title: "Retención Académica SIES"
+type: software
+version: 3.3.1
+authors:
+  - alias: amuletofloss
+repository-code: "https://github.com/amuletofloss/RETENCION_IPLA"
+license: MIT
+keywords:
+  - SIES
+  - Power BI
+  - PBIP
+  - retención académica

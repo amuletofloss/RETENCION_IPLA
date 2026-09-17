@@ -1,0 +1,18 @@
+table Cohortes
+	lineageTag: 1ac5bdf5-6da3-403c-b081-fccde66d1fe9
+
+	column Cohorte
+		dataType: int64
+		lineageTag: cc9e0a70-4104-4bef-8641-5caf11f15317
+		summarizeBy: none
+		sourceColumn: Cohorte
+
+	partition Cohortes = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(#"Ruta datos" & "/cohortes.csv"), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Types = Table.TransformColumnTypes(Headers,{{"Cohorte",Int64.Type}},"en-US")
+				in Types
+

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "544ed965946a4702ee07",
+  "position": {
+    "x": 339,
+    "y": 226,
+    "width": 291,
+    "height": 100,
+    "z": 8,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'resi-card-1'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Permanencia ES · trayectorias'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA N ES Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA N ES Año 2",
+              "nativeQueryRef": "IPLA N ES Año 2",
+              "displayName": "Permanencia ES · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

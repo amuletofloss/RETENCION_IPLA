@@ -1,0 +1,100 @@
+{
+  "version_metodologica": "3.3.1",
+  "universo": "Pregrado IP+CFT; modalidad No Presencial o Semipresencial o jornada A Distancia; Plan Regular; ingreso de origen en primer semestre",
+  "unidad_principal": "trayectoria MRUN-carrera-institución-cohorte",
+  "unidad_flujos": "persona MRUN por transición anual de pregrado",
+  "universo_flujos": "Todo pregrado SIES; todas las instituciones, modalidades, jornadas y planes",
+  "mrun": "Identificador enmascarado publicado por SIES; se conserva como texto",
+  "campo_rut": false,
+  "matricula_anios": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "titulados_anios": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "ecs_ids": [
+    "171",
+    "426"
+  ],
+  "checks": {
+    "filas_seguimiento": 1998296,
+    "trayectorias": 364112,
+    "personas": 332031,
+    "programas_cohorte_modalidad": 3616,
+    "violaciones_orden": 0,
+    "duplicados_fact": 0,
+    "mrun_nulos": 0,
+    "celdas_cohorte_horizonte": 136,
+    "iplacex_conciliacion": 0,
+    "transiciones_persona": 22722855,
+    "transiciones_exportables": 22722855,
+    "transiciones_conciliacion": 0,
+    "transiciones_duplicadas": 0,
+    "transiciones_anios_invalidos": 0,
+    "transiciones_mrun_invalidos": 0,
+    "transiciones_estado_invalido": 0
+  },
+  "ultimo_periodo": {
+    "cohorte": 2025,
+    "anio_observado": 2026,
+    "base": 50233,
+    "carrera": 31349,
+    "institucion": 32153,
+    "educacion_superior": 35339
+  },
+  "ecs_ultimo_periodo": {
+    "cohorte": 2025,
+    "anio_observado": 2026,
+    "base": 2299,
+    "carrera": 1621,
+    "institucion": 1655,
+    "educacion_superior": 1767
+  },
+  "iplacex_procedencia": {
+    "desde": 2012,
+    "hasta": 2026,
+    "total": 80028,
+    "sin_matricula_previa": 36792,
+    "con_matricula_previa": 43236,
+    "antecedente_otra_ies": 42286,
+    "antecedente_online_otra_ies": 8965
+  },
+  "iplacex_procedencia_reciente": {
+    "desde": 2025,
+    "hasta": 2026,
+    "total": 34356,
+    "antecedente_otra_ies": 20058,
+    "antecedente_online_otra_ies": 4486
+  },
+  "modo_publicacion": "external_mrun",
+  "microdatos_incluidos": false
+}

@@ -1,0 +1,64 @@
+relationship a1192b1a-dad4-950d-8ad8-f0ca85b00f08
+	fromColumn: Seguimiento.ProgramaID
+	toColumn: Programas.ProgramaID
+
+relationship fa145039-759a-6bf5-c891-fb54bdb796a5
+	fromColumn: Seguimiento.Cohorte
+	toColumn: Cohortes.Cohorte
+
+relationship 16043e60-d770-7b42-54f5-3a09094992fe
+	fromColumn: Seguimiento.AnioDesdeIngreso
+	toColumn: Horizontes.AnioDesdeIngreso
+
+relationship fa46a0a3-89a7-5adc-2eb2-dfbfc7e77917
+	fromColumn: Transiciones.AnioOrigen
+	toColumn: Cohortes.Cohorte
+
+relationship e4e9ddfd-fbd7-a1e6-c504-b364434b9b21
+	fromColumn: Programas.TipoInstitucion
+	toColumn: DimTipoInstitucion.TipoInstitucion
+
+relationship ecf7b8d5-9a46-ffaf-812a-3cfe9e55d1e7
+	fromColumn: Transiciones.TipoInstitucionOrigen
+	toColumn: DimTipoInstitucion.TipoInstitucion
+
+relationship 0913c8e8-48c4-3d00-f3cd-3cc50ab75eb7
+	fromColumn: Programas.ModalidadOrigen
+	toColumn: DimModalidad.Modalidad
+
+relationship 45e82ce3-c4b6-8662-8fb6-c3f60a6eb312
+	fromColumn: Transiciones.ModalidadOrigen
+	toColumn: DimModalidad.Modalidad
+
+relationship f77a7a2a-f99c-6be9-00a9-929a4436ef3d
+	fromColumn: Programas.JornadaOrigen
+	toColumn: DimJornada.Jornada
+
+relationship e1659c2d-6e8d-f841-6182-3a5754836fae
+	fromColumn: Transiciones.JornadaOrigen
+	toColumn: DimJornada.Jornada
+
+relationship e7e0491e-b67d-2026-2079-ff32af7e666a
+	fromColumn: Programas.AreaCarreraGenerica
+	toColumn: DimAreaGenerica.AreaCarreraGenerica
+
+relationship 1714b785-f2e5-a68b-6d20-2d7c6057ddad
+	fromColumn: Transiciones.AreaCarreraGenericaOrigen
+	toColumn: DimAreaGenerica.AreaCarreraGenerica
+
+relationship 1663a213-a634-8121-c940-e098f1602ce2
+	fromColumn: Programas.InstitucionID
+	toColumn: DimInstitucion.InstitucionID
+
+relationship 950d94fd-0fcd-6c79-d192-8112bc91d8eb
+	fromColumn: Transiciones.InstitucionOrigenID
+	toColumn: DimInstitucion.InstitucionID
+
+relationship ff7deb06-1143-6b0c-d2ab-584335430396
+	fromColumn: Programas.CarreraExactaID
+	toColumn: DimCarrera.CarreraExactaID
+
+relationship 5fff3c2b-5bfb-6c35-2420-00d2f1203b2c
+	fromColumn: Transiciones.CarreraExactaOrigenID
+	toColumn: DimCarrera.CarreraExactaID
+

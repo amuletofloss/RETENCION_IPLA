@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Retencion_Academica_SIES.SemanticModel"
+    }
+  }
+}

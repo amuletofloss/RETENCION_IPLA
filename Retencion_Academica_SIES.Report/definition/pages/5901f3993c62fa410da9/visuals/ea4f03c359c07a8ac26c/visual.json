@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ea4f03c359c07a8ac26c",
+  "position": {
+    "x": 32,
+    "y": 226,
+    "width": 291,
+    "height": 100,
+    "z": 7,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'res-card-0'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Base · trayectorias'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "Base Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.Base Año 2",
+              "nativeQueryRef": "Base Año 2",
+              "displayName": "Base · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

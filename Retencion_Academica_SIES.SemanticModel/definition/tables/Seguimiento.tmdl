@@ -1,0 +1,397 @@
+table Seguimiento
+	lineageTag: 260e8bee-5b37-4c19-944e-64a0e9279908
+
+	measure 'N Base' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,DISTINCTCOUNT('Seguimiento'[TrayectoriaID]))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 264b0745-622f-4418-a0b0-0b283e766bf0
+
+	measure 'N Carrera' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnCarrera]=1))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 1ab147d1-f6fe-439a-9c05-39da1ea5d7e4
+
+	measure 'N Institucion' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnInstitucion]=1))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 6e7e2085-fdb9-4fd3-b4f9-3a27de8f5b1e
+
+	measure 'N Educacion Superior' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnEducacionSuperior]=1))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: d88e0717-035d-47af-ad55-730ad7843a43
+
+	measure 'Tasa Carrera' = DIVIDE([N Carrera],[N Base])
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: f193c21e-a331-4174-86ba-20554ebad229
+
+	measure 'Tasa Institucion' = DIVIDE([N Institucion],[N Base])
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: 1e41a4a7-1191-447f-a732-d306bced340f
+
+	measure 'Tasa Educacion Superior' = DIVIDE([N Educacion Superior],[N Base])
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: 327c8b92-0b5f-4277-933a-bc41792cd9fd
+
+	measure Personas =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,DISTINCTCOUNT('Seguimiento'[MRUN]))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 31277ba4-fb76-4a1d-90ae-c27f16f953b8
+
+	measure 'Personas Institucion' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[MRUN]),'Seguimiento'[EnInstitucion]=1))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: b371b70c-35e8-4d47-abfb-ddbbfd0d3332
+
+	measure 'Personas Educacion Superior' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[MRUN]),'Seguimiento'[EnEducacionSuperior]=1))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 8106ccd2-a644-47a2-a74a-2ef97dc1459a
+
+	measure 'Tasa Institucion Personas' = DIVIDE([Personas Institucion],[Personas])
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: c2fd8b4d-2cfe-4410-84c1-727118a677f1
+
+	measure 'Tasa Educacion Superior Personas' = DIVIDE([Personas Educacion Superior],[Personas])
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: d3bfd486-7ef5-4b91-9c59-1a483b7cc6be
+
+	measure 'N Titulados' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[TituladoAcumulado]=1))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 9b0bd9c0-c8e2-4958-a6c1-7a5f2ee2f9bb
+
+	measure 'Tasa Titulacion' = DIVIDE([N Titulados],[N Base])
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: d018434d-918c-444f-826d-2377413c3d23
+
+	measure 'N Movilidad ECS' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte]) && HASONEVALUE('Horizontes'[AnioDesdeIngreso])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[MovilidadInternaECS]=1))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 3faff837-4fef-4086-b83e-dc948c8712c4
+
+	measure 'ECS Base' = CALCULATE([N Base],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: #,##0
+		displayFolder: Indicadores reproducibles
+		lineageTag: 3cb68abd-633e-453e-a512-3daa907d52c4
+
+	measure 'ECS Tasa Carrera' = CALCULATE([Tasa Carrera],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: 10be8d90-58f0-43c7-89ad-26102767386b
+
+	measure 'ECS Tasa Institucion' = CALCULATE([Tasa Institucion],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: 590261c6-d24f-42d4-a298-dadf705e0f4d
+
+	measure 'ECS Tasa Educacion Superior' = CALCULATE([Tasa Educacion Superior],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: 0.0%
+		displayFolder: Indicadores reproducibles
+		lineageTag: c9c9d779-c237-4fbb-b2ba-9f06ce42a182
+
+	measure 'Definicion MRUN' = "MRUN es el identificador enmascarado publicado por SIES; no corresponde al RUT real."
+		formatString: @
+		displayFolder: Ayuda
+		lineageTag: 06b3a378-4b5a-48bb-a0c3-266b394f146d
+
+	measure 'Estado seleccion' = SWITCH(TRUE(),NOT HASONEVALUE('Cohortes'[Cohorte]),"Seleccione exactamente una cohorte",NOT HASONEVALUE('Horizontes'[AnioDesdeIngreso]),"Seleccione exactamente un seguimiento","OK")
+		formatString: @
+		displayFolder: Ayuda
+		lineageTag: d15386d5-f171-4191-8826-0bd283547a5b
+
+	measure 'Base Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: 5831cba3-e686-4f4c-9c3a-46ee9c87ade3
+
+	measure 'N Carrera Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnCarrera]=1),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: 517e31d5-67e3-4944-bd7d-cf6b2f129ce6
+
+	measure 'Tasa Carrera Año 2' = DIVIDE([N Carrera Año 2],[Base Año 2])
+		formatString: 0.0%
+		displayFolder: Retención año 2
+		lineageTag: 59f46e19-ada3-49a8-9bcc-e89156a180ce
+
+	measure 'N No Retenidos Carrera Año 2' = [Base Año 2]-[N Carrera Año 2]
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: b4c9caed-4584-4ea5-981f-20be3ceaa4c0
+
+	measure 'N Institucion Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnInstitucion]=1),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: b6c2983f-b747-4335-97fa-a643b1cc9347
+
+	measure 'Tasa Institucion Año 2' = DIVIDE([N Institucion Año 2],[Base Año 2])
+		formatString: 0.0%
+		displayFolder: Retención año 2
+		lineageTag: ce619752-3dcb-42bc-9105-40e418efb41a
+
+	measure 'N Educacion Superior Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnEducacionSuperior]=1),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: 2fdb9ffe-9e80-4ce0-a607-6f2ae8e93f81
+
+	measure 'Tasa Educacion Superior Año 2' = DIVIDE([N Educacion Superior Año 2],[Base Año 2])
+		formatString: 0.0%
+		displayFolder: Retención año 2
+		lineageTag: eed52504-5e93-4aa1-ad9b-693bfca3edd3
+
+	measure 'N Cambio Carrera Misma IES Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnCarrera]=0,'Seguimiento'[EnInstitucion]=1),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: d79edd74-19a0-4c77-a807-0682486b0153
+
+	measure 'N Cambio IES Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnInstitucion]=0,'Seguimiento'[EnEducacionSuperior]=1),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: c583de8f-bbdb-4c5b-87ac-d2a859f79c13
+
+	measure 'N Sin Matricula Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnEducacionSuperior]=0),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: dde0be2c-24ee-4932-addd-e412efe8dcaf
+
+	measure 'N Sin Matricula Con Titulo Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnEducacionSuperior]=0,'Seguimiento'[TituladoPersonaAcumulado]=1),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: 87392ebe-1373-47a7-b1c3-35fa035d6135
+
+	measure 'N Sin Matricula Sin Titulo Año 2' =
+			VAR _contextoValido=HASONEVALUE('Cohortes'[Cohorte])
+			RETURN IF(_contextoValido,CALCULATE(CALCULATE(DISTINCTCOUNT('Seguimiento'[TrayectoriaID]),'Seguimiento'[EnEducacionSuperior]=0,'Seguimiento'[TituladoPersonaAcumulado]=0),REMOVEFILTERS('Horizontes'),'Seguimiento'[AnioDesdeIngreso]=2))
+		formatString: #,##0
+		displayFolder: Retención año 2
+		lineageTag: 7a10e069-34a7-42d4-88bd-beb1853c8a62
+
+	measure 'IPLA Base Año 2' = CALCULATE([Base Año 2],KEEPFILTERS('Programas'[InstitucionID]="152"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: a2e977b7-2932-4d58-99f1-b5022905da51
+
+	measure 'IPLA N Carrera Año 2' = CALCULATE([N Carrera Año 2],KEEPFILTERS('Programas'[InstitucionID]="152"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: df6db3cf-b2d9-4662-9f28-b751ae091515
+
+	measure 'IPLA Tasa Carrera Año 2' = DIVIDE([IPLA N Carrera Año 2],[IPLA Base Año 2])
+		formatString: 0.0%
+		displayFolder: Focos año 2
+		lineageTag: b603c257-4d65-47ea-b595-6ec25c2b938c
+
+	measure 'IPLA N Institucion Año 2' = CALCULATE([N Institucion Año 2],KEEPFILTERS('Programas'[InstitucionID]="152"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: 2cffe599-3653-4747-bb9b-6f5591400726
+
+	measure 'IPLA Tasa Institucion Año 2' = DIVIDE([IPLA N Institucion Año 2],[IPLA Base Año 2])
+		formatString: 0.0%
+		displayFolder: Focos año 2
+		lineageTag: f44494ab-4f60-4910-8f5f-58c576269a64
+
+	measure 'IPLA N ES Año 2' = CALCULATE([N Educacion Superior Año 2],KEEPFILTERS('Programas'[InstitucionID]="152"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: 3f724eac-377b-48f4-b4f0-5720b67abf78
+
+	measure 'IPLA Tasa ES Año 2' = DIVIDE([IPLA N ES Año 2],[IPLA Base Año 2])
+		formatString: 0.0%
+		displayFolder: Focos año 2
+		lineageTag: 2731094a-a034-4951-bbee-061637bdee81
+
+	measure 'IPLA Sin Matricula Con Titulo' = CALCULATE([N Sin Matricula Con Titulo Año 2],KEEPFILTERS('Programas'[InstitucionID]="152"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: 832b8fd8-daa4-4446-89ea-0b436945d24f
+
+	measure 'IPLA Sin Matricula Sin Titulo' = CALCULATE([N Sin Matricula Sin Titulo Año 2],KEEPFILTERS('Programas'[InstitucionID]="152"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: f07e9fc1-104e-4878-8a6b-22365de0160b
+
+	measure 'ECS Base Año 2' = CALCULATE([Base Año 2],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: eb382d53-ce31-4959-a745-3c3a0a1d144f
+
+	measure 'ECS N Carrera Año 2' = CALCULATE([N Carrera Año 2],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: 02c8fbd1-82f8-4ef4-bddd-0dfd86bfdd81
+
+	measure 'ECS Tasa Carrera Año 2' = DIVIDE([ECS N Carrera Año 2],[ECS Base Año 2])
+		formatString: 0.0%
+		displayFolder: Focos año 2
+		lineageTag: 1c65a692-1c3c-482f-90d8-53e505f5629c
+
+	measure 'ECS N Institucion Año 2' = CALCULATE([N Institucion Año 2],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: bb38292d-2b1f-49c5-8a08-b6dfcdbb9cbc
+
+	measure 'ECS Tasa Institucion Año 2' = DIVIDE([ECS N Institucion Año 2],[ECS Base Año 2])
+		formatString: 0.0%
+		displayFolder: Focos año 2
+		lineageTag: 1c43ae65-d818-447c-850d-133b15857f30
+
+	measure 'ECS N ES Año 2' = CALCULATE([N Educacion Superior Año 2],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: bf43786a-f0f9-4692-bc94-be595e98d011
+
+	measure 'ECS Tasa ES Año 2' = DIVIDE([ECS N ES Año 2],[ECS Base Año 2])
+		formatString: 0.0%
+		displayFolder: Focos año 2
+		lineageTag: 599c7aa3-42a8-41aa-9464-10b9e69fd966
+
+	measure 'ECS Sin Matricula Con Titulo' = CALCULATE([N Sin Matricula Con Titulo Año 2],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: a097ee81-3cc4-4211-b191-1cfeea55c23b
+
+	measure 'ECS Sin Matricula Sin Titulo' = CALCULATE([N Sin Matricula Sin Titulo Año 2],KEEPFILTERS('Programas'[GrupoECS]="ECS"))
+		formatString: #,##0
+		displayFolder: Focos año 2
+		lineageTag: c1841a2e-fa1b-4c49-aa4e-62ef15cf13c8
+
+	column MRUN
+		dataType: string
+		isHidden
+		lineageTag: 09654e6c-5dc7-4c11-89ea-1101e7160839
+		summarizeBy: none
+		sourceColumn: MRUN
+
+	column TrayectoriaID
+		dataType: string
+		isHidden
+		lineageTag: c4054f5c-a2f2-4e5d-adf9-ea28cb7f1507
+		summarizeBy: none
+		sourceColumn: TrayectoriaID
+
+	column ProgramaID
+		dataType: string
+		isHidden
+		lineageTag: 4ed59e76-6a8a-4e53-b1ae-6bb6ddea1654
+		summarizeBy: none
+		sourceColumn: ProgramaID
+
+	column Cohorte
+		dataType: int64
+		lineageTag: 355b2e62-a04b-48b6-8b58-c84a879fd46c
+		summarizeBy: none
+		sourceColumn: Cohorte
+
+	column AnioObservado
+		dataType: int64
+		lineageTag: 96c640c4-5af3-4bfd-96cc-b93c85304407
+		summarizeBy: none
+		sourceColumn: AnioObservado
+
+	column AnioDesdeIngreso
+		dataType: int64
+		lineageTag: 1773771a-141d-416b-adb3-42f050acd81f
+		summarizeBy: none
+		sourceColumn: AnioDesdeIngreso
+
+	column Observable
+		dataType: int64
+		lineageTag: 755e3d5e-531b-4f7d-ab47-404a065c72e0
+		summarizeBy: none
+		sourceColumn: Observable
+
+	column EnCarrera
+		dataType: int64
+		lineageTag: 353c57de-d06f-49db-95f9-724d651c4ecd
+		summarizeBy: none
+		sourceColumn: EnCarrera
+
+	column EnInstitucion
+		dataType: int64
+		lineageTag: 3c11d297-a86e-49d0-8123-71c19bba6e91
+		summarizeBy: none
+		sourceColumn: EnInstitucion
+
+	column EnEducacionSuperior
+		dataType: int64
+		lineageTag: 15c3d4a1-d783-4b6f-9f2d-0f62f50e2823
+		summarizeBy: none
+		sourceColumn: EnEducacionSuperior
+
+	column EnECS
+		dataType: int64
+		lineageTag: 7b90787e-de16-4084-8f9f-706138db26ee
+		summarizeBy: none
+		sourceColumn: EnECS
+
+	column MovilidadInternaECS
+		dataType: int64
+		lineageTag: 96ef09fb-9719-4025-95bc-dca95d08329b
+		summarizeBy: none
+		sourceColumn: MovilidadInternaECS
+
+	column TituladoAcumulado
+		dataType: int64
+		lineageTag: 7b9d4494-6cba-43d6-a033-c84decd12635
+		summarizeBy: none
+		sourceColumn: TituladoAcumulado
+
+	column TituladoPersonaAcumulado
+		dataType: int64
+		lineageTag: d36857ef-70fe-4288-ab70-3f08fb2b3b7d
+		summarizeBy: none
+		sourceColumn: TituladoPersonaAcumulado
+
+	partition Seguimiento = m
+		mode: import
+		source =
+				let
+					Files = Folder.Files(#"Ruta datos"),
+					Selected = Table.SelectRows(Files, each Text.StartsWith([Name], "seguimiento_") and Text.EndsWith([Name], ".csv.gz")),
+					Parsed = Table.AddColumn(Selected, "Rows", each Table.PromoteHeaders(Csv.Document(Binary.Decompress([Content], Compression.GZip), [Delimiter=";", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), [PromoteAllScalars=true])),
+					Combined = Table.Combine(Parsed[Rows]),
+					Types = Table.TransformColumnTypes(Combined,{{"MRUN",type text},{"TrayectoriaID",type text},{"ProgramaID",type text},{"Cohorte",Int64.Type},{"AnioObservado",Int64.Type},{"AnioDesdeIngreso",Int64.Type},{"Observable",Int64.Type},{"EnCarrera",Int64.Type},{"EnInstitucion",Int64.Type},{"EnEducacionSuperior",Int64.Type},{"EnECS",Int64.Type},{"MovilidadInternaECS",Int64.Type},{"TituladoAcumulado",Int64.Type},{"TituladoPersonaAcumulado",Int64.Type}},"en-US")
+				in Types
+

@@ -1,0 +1,27 @@
+model Model
+	culture: es-CL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: es-CL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Seguimiento","Programas","Cohortes","Horizontes","Transiciones","DimTipoInstitucion","DimModalidad","DimJornada","DimAreaGenerica","DimInstitucion","DimCarrera","Ruta datos"]
+
+ref table Seguimiento
+ref table Programas
+ref table Cohortes
+ref table Horizontes
+ref table Transiciones
+ref table DimTipoInstitucion
+ref table DimModalidad
+ref table DimJornada
+ref table DimAreaGenerica
+ref table DimInstitucion
+ref table DimCarrera
+
+ref cultureInfo es-CL
+

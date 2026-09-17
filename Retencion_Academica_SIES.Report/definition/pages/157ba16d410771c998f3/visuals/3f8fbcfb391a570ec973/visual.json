@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "3f8fbcfb391a570ec973",
+  "position": {
+    "x": 1160,
+    "y": 226,
+    "width": 408,
+    "height": 100,
+    "z": 10,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rc-card-3'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Trayectorias no retenidas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "N No Retenidos Carrera Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.N No Retenidos Carrera Año 2",
+              "nativeQueryRef": "N No Retenidos Carrera Año 2",
+              "displayName": "Trayectorias no retenidas",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

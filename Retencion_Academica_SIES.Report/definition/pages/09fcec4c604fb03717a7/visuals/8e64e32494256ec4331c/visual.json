@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "8e64e32494256ec4331c",
+  "position": {
+    "x": 408,
+    "y": 226,
+    "width": 360,
+    "height": 100,
+    "z": 8,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rci-card-1'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Retención carrera · trayectorias'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Seguimiento"
+                    }
+                  },
+                  "Property": "IPLA Tasa Carrera Año 2"
+                }
+              },
+              "queryRef": "Seguimiento.IPLA Tasa Carrera Año 2",
+              "nativeQueryRef": "IPLA Tasa Carrera Año 2",
+              "displayName": "Retención carrera · trayectorias",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

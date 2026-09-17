@@ -1,0 +1,230 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "f0d47b179800414b52c2",
+  "position": {
+    "x": 32,
+    "y": 590,
+    "width": 1536,
+    "height": 228,
+    "z": 13,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "visualContainerObjects": {
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rie-table'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detalle institucional ECS'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "InstitucionOrigen"
+                }
+              },
+              "queryRef": "Transiciones.InstitucionOrigen",
+              "nativeQueryRef": "InstitucionOrigen",
+              "displayName": "Institución origen",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "TipoInstitucionOrigen"
+                }
+              },
+              "queryRef": "Transiciones.TipoInstitucionOrigen",
+              "nativeQueryRef": "TipoInstitucionOrigen",
+              "displayName": "Tipo origen",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "ModalidadOrigen"
+                }
+              },
+              "queryRef": "Transiciones.ModalidadOrigen",
+              "nativeQueryRef": "ModalidadOrigen",
+              "displayName": "Modalidad origen",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "JornadaOrigen"
+                }
+              },
+              "queryRef": "Transiciones.JornadaOrigen",
+              "nativeQueryRef": "JornadaOrigen",
+              "displayName": "Jornada origen",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "InstitucionDestino"
+                }
+              },
+              "queryRef": "Transiciones.InstitucionDestino",
+              "nativeQueryRef": "InstitucionDestino",
+              "displayName": "Institución destino",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "TipoInstitucionDestino"
+                }
+              },
+              "queryRef": "Transiciones.TipoInstitucionDestino",
+              "nativeQueryRef": "TipoInstitucionDestino",
+              "displayName": "Tipo destino",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "ModalidadDestino"
+                }
+              },
+              "queryRef": "Transiciones.ModalidadDestino",
+              "nativeQueryRef": "ModalidadDestino",
+              "displayName": "Modalidad destino",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "JornadaDestino"
+                }
+              },
+              "queryRef": "Transiciones.JornadaDestino",
+              "nativeQueryRef": "JornadaDestino",
+              "displayName": "Jornada destino",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Transiciones"
+                    }
+                  },
+                  "Property": "Personas flujo"
+                }
+              },
+              "queryRef": "Transiciones.Personas flujo",
+              "nativeQueryRef": "Personas flujo",
+              "displayName": "Personas",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

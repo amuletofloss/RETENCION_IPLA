@@ -1,0 +1,17 @@
+schema_version: sies-pbip/data-publication/v1
+project: retencion_academica_sies
+mode: external_mrun
+minimum_cell_size: 10
+microdata_in_current_tree: false
+historical_publication_review:
+  status: remediated_clean_history
+  scope: publicaciones anteriores con archivos seguimiento_*.csv.gz
+  remediation: reemplazo del historial remoto por un commit raíz limpio v3.3.1
+  remote_rewrite: requiere confirmación explícita del propietario al ejecutar
+approvals:
+  legal: la licencia MIT no sustituye los términos de las fuentes SIES
+  privacy: passed_static_review_no_microdata
+  data_owner: publicacion limitada a codigo, definiciones y controles agregados
+notes:
+  - MRUN se usa localmente como texto para vinculación longitudinal.
+  - GitHub publica únicamente controles agregados con supresión primaria y complementaria.
